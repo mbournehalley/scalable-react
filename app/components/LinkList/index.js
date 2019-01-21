@@ -6,12 +6,12 @@
 
 import React from 'react';
 
-
+import Link from '../Link';
 import styles from './styles.css';
 
 const LinkList = ({ links }) => (
   <div className={styles.linkList}>
-    {links.map(l => <div key={l.id}>{l.url} - ({l.description})</div>)}
+    {links.map(l => <Link key={l.id} link={l} />)}
   </div>
 );
 
