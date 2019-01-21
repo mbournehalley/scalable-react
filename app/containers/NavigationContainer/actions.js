@@ -9,6 +9,7 @@ import {
   REQUEST_TOPICS_FAILED,
   REQUEST_TOPICS_SUCCEEDED,
   SELECT_TOPIC,
+  TOGGLE_DRAWER,
 } from './constants';
 
 export const requestTopics = () => ({
@@ -28,4 +29,8 @@ export const requestTopicsSucceeded = (topics) => ({
 export const selectTopic = (topic) => ({
   type: SELECT_TOPIC,
   topic,
+});
+
+export const toggleDrawer = () => ({
+  type: TOGGLE_DRAWER,
 });

@@ -18,13 +18,13 @@ const initialState = fromJS({
   }],
 });
 
-function linkListContainerReducer(state = initialState, { type, links }) {
+const linkListContainerReducer = (state = initialState, { type, links }) => {
   switch (type) {
     case REQUEST_LINKS_SUCCEEDED:
       return state.set('links', links);
     default:
       return state;
   }
-}
+};
 
 export default linkListContainerReducer;

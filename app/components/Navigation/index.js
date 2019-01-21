@@ -6,18 +6,26 @@
 
 import React from 'react';
 import styles from './styles.css';
+import AppBar from '../AppBar';
+import Drawer from '../Drawer';
 
-const Navigation = ({ topics, selectTopic }) => (
+
+const Navigation = ({ topics, selectTopic, toggleDrawer, isDrawerOpen }) => (
   <div className={styles.navigation}>
-    {topics.map(t =>
-      <div key={t.name} onClick={() => selectTopic(t)}>
-        {t.name}
-      </div>
-    )}
+    <AppBar toggleDrawer={toggleDrawer} />
+    <Drawer
+      items={topics}
+      selectItem={selectTopic}
+      itemsLabelAttr="name"
+      itemKeyAttr="name"
+      isDrawerOpen={isDrawerOpen}
+    />
   </div>
 );
 
 Navigation.propTypes = {
+  isDrawerOpen: React.PropTypes.bool.isRequired,
+  toggleDrawer: React.PropTypes.func.isRequired,
   topics: React.PropTypes.arrayOf(
     React.PropTypes.shape({
       name: React.PropTypes.string.isRequired,
