@@ -23,7 +23,7 @@ const navigationContainerReducer = (state = initialState, { type, topics, topic 
     case REQUEST_TOPICS_SUCCEEDED:
       return state.set('topics', topics);
     case SELECT_TOPIC:
-      return state.set('selectedTopic', topic);
+      return state.set('selectedTopic', topic).set('isDrawerOpen', false);
     default:
       return state;
   }
