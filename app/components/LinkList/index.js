@@ -18,6 +18,7 @@ const LinkList = ({ links }) => (
 LinkList.propTypes = {
   links: React.PropTypes.arrayOf(
     React.PropTypes.shape({
+      voteCount: React.PropTypes.number.isRequired,
       description: React.PropTypes.string.isRequired,
       url: React.PropTypes.string.isRequired,
       id: React.PropTypes.string.isRequired,
