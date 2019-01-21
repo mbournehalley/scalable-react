@@ -1,6 +1,6 @@
 .appBar { /* stylelint-disable */
-  background-color: #00afcc;
-  color: #fff;
+  background-color: #00AFCC;
+  color: #FFF;
   font-size: 24px;
   display: flex;
   justify-content: space-between;
@@ -19,7 +19,7 @@
 }
 
 .icon:hover {
-  color: #e5e5e5
+  color: #E5E5E5;
 }
 
 .linkContainer {
