@@ -11,8 +11,8 @@ import styles from './styles.css';
 
 const LinkList = ({ links, topicName }) => (
   <div className={styles.linkList}>
+    <h1>{topicName}</h1>
     {links.map(l => <Link key={l.id} link={l} />)}
-    {topicName}
   </div>
 );
 
