@@ -9,9 +9,10 @@ import React from 'react';
 import Link from '../Link';
 import styles from './styles.css';
 
-const LinkList = ({ links }) => (
+const LinkList = ({ links, routeTopicName }) => (
   <div className={styles.linkList}>
     {links.map(l => <Link key={l.id} link={l} />)}
+    {routeTopicName}
   </div>
 );
 
@@ -24,6 +25,8 @@ LinkList.propTypes = {
       id: React.PropTypes.string.isRequired,
     })
   ),
+  routeTopicName: React.PropTypes.string.isRequired,
+
 };
 
 export default LinkList;
