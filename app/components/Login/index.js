@@ -13,7 +13,19 @@ class Login extends React.Component { // eslint-disable-line react/prefer-statel
   render() {
     return (
       <div className={styles.login}>
-        This is Login
+        <div className={styles.heading}>
+          Login with your email
+        </div>
+        <input
+          className={styles.input}
+          placeholder="Your email"
+          ref={(f) => { this.emailField = f; }}
+          type="text"
+        />
+        <div className={styles.actionContainer}>
+          <div className={styles.button}>Cancel</div>
+          <div className={styles.button}>Login</div>
+        </div>
       </div>
     );
   }
