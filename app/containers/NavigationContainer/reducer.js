@@ -16,8 +16,10 @@ const initialState = fromJS({
   isDrawerOpen: false,
 });
 
-const navigationContainerReducer = (state = initialState, { type, topics, topic }) => {
+const navigationContainerReducer = (state = initialState, { payload, type, topics, topic }) => {
   switch (type) {
+    case '@@route/LOCATION_CHANGE':
+      return state.set('routerLocation', payload.topics);
     case TOGGLE_DRAWER:
       return state.set('isDrawerOpen', !state.get('isDrawerOpen'));
     case REQUEST_TOPICS_SUCCEEDED:
