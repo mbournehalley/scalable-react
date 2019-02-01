@@ -11,6 +11,9 @@ import validator from 'email-validator';
 import classNames from 'classnames';
 
 class Login extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  static propTypes = {
+    login: React.PropTypes.func.isRequired,
+  }
   state = {};
   login = () => {
     const email = this.emailField.value;
@@ -22,6 +25,7 @@ class Login extends React.Component { // eslint-disable-line react/prefer-statel
     }
 
     this.setState({ errorText: null });
+    this.props.login(email);
   }
   render() {
     const fieldError = this.state.errorText ?
