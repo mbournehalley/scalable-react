@@ -13,6 +13,7 @@ import classNames from 'classnames';
 class Login extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
     login: React.PropTypes.func.isRequired,
+    cancelLogin: React.PropTypes.func.isRequired,
   }
   state = {};
   login = () => {
@@ -44,7 +45,7 @@ class Login extends React.Component { // eslint-disable-line react/prefer-statel
         />
         {fieldError}
         <div className={styles.actionContainer}>
-          <div className={styles.button}>Cancel</div>
+          <div className={styles.button} onClick={this.props.cancelLogin}>Cancel</div>
           <div className={styles.button} onClick={this.login}>Login</div>
         </div>
       </div>
